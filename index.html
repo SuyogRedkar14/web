@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Sign-in Example</title>
+  <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID">
+</head>
+<body>
+  <div id="google-signin-button" class="g-signin2" data-onsuccess="onSignIn"></div>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onSignIn(googleUser) {
+      const idToken = googleUser.getAuthResponse().id_token;
+      console.log("Google ID Token:", idToken);
+      // Send the idToken to your server for validation and further processing.
+      // You can use a library like Axios or Fetch to make a POST request to your backend server.
+    }
+  </script>
+</body>
+</html>
